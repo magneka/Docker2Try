@@ -1,0 +1,21 @@
+version: "2.4"
+
+services:  
+  ucrustwasm:
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+      
+    container_name: ubrustwasm
+
+    tty: true
+
+    ports:
+      - 8080:8080           
+
+    # Mount host directories to container directories
+    volumes:
+      - './source:/source'
+      - '/source/target'
+
