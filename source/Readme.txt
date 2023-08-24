@@ -1,3 +1,10 @@
+https://www.programiz.com/rust/print-output
+https://web.mit.edu/rust-lang_v1.25/arch/amd64_ubuntu1404/share/doc/rust/html/book/first-edition/README.html
+https://yew.rs/docs/getting-started/introduction
+
+// Siste eksempel
+https://yew.rs/docs/concepts/router
+
 Hello World
 1. Cargo new hello
 2. gå til hello folder
