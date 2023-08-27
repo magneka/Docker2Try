@@ -2,6 +2,9 @@ https://www.programiz.com/rust/print-output
 https://web.mit.edu/rust-lang_v1.25/arch/amd64_ubuntu1404/share/doc/rust/html/book/first-edition/README.html
 https://yew.rs/docs/getting-started/introduction
 
+Slette target kataloger rekursivt
+find . -name target -exec rm -rf {} \;
+
 // Siste eksempel
 https://yew.rs/docs/concepts/router
 
