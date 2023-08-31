@@ -1,6 +1,20 @@
 //https://cloudmaker.dev/how-to-create-a-rest-api-in-rust/
 
-use actix_web::{App, HttpResponse, HttpServer, Responder, get, post};
+use actix_web::{web, App, HttpResponse, HttpServer, Responder, get, post};
+use serde::Deserialize;
+
+#[derive(Deserialize)]
+struct Info {
+    username: String,
+}
+
+/// extract `Info` using serde
+#[post("/welcome_user")]
+async fn welcome_user(info: web::Json<Info>) -> impl Responder {
+    //Ok(format!("Welcome {}!", info.username))
+    let response = format!("username: {}", info.username);
+    HttpResponse::Ok().body(response)
+}
 
 #[get("/")]
 async fn index() -> impl Responder {
@@ -24,6 +38,7 @@ async fn main() -> std::io::Result<()> {
             .service(index)
             .service(index_todo)
             .service(echo)
+            .service(welcome_user)
     })
         .bind("127.0.0.1:5000")?
         .run()
